@@ -828,7 +828,7 @@ void SkillMenu::init(int flag, int region_height)
     const int char_height = tiles.get_crt_font()->char_height();
     if (Options.tile_menu_icons)
     {
-        line_height = min((region_height - char_height * 6) / SK_ARR_LN,
+        line_height = min((region_height-6)*char_height / SK_ARR_LN,
                           Options.tile_cell_pixels);
         set_flag(SKMF_SKILL_ICONS);
     }
