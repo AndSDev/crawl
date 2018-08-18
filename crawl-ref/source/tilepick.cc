@@ -3727,6 +3727,126 @@ tileidx_t tileidx_branch(const branch_type br)
     }
 }
 
+tileidx_t tileidx_player_job(const job_type job)
+{
+    switch (job)
+    {
+        case JOB_FIGHTER:
+            return TILEG_JOB_FIGHTER;
+        case JOB_WIZARD:
+            return TILEG_JOB_WIZARD;
+        case JOB_GLADIATOR:
+            return TILEG_JOB_GLADIATOR;
+        case JOB_NECROMANCER:
+            return TILEG_JOB_NECROMANCER;
+        case JOB_ASSASSIN:
+            return TILEG_JOB_ASSASSIN;
+        case JOB_BERSERKER:
+            return TILEG_JOB_BERSERKER;
+        case JOB_HUNTER:
+            return TILEG_JOB_HUNTER;
+        case JOB_CONJURER:
+            return TILEG_JOB_CONJURER;
+        case JOB_ENCHANTER:
+            return TILEG_JOB_ENCHANTER;
+        case JOB_FIRE_ELEMENTALIST:
+            return TILEG_JOB_FIRE_ELEMENTALIST;
+        case JOB_ICE_ELEMENTALIST:
+            return TILEG_JOB_ICE_ELEMENTALIST;
+        case JOB_SUMMONER:
+            return TILEG_JOB_SUMMONER;
+        case JOB_AIR_ELEMENTALIST:
+            return TILEG_JOB_AIR_ELEMENTALIST;
+        case JOB_EARTH_ELEMENTALIST:
+            return TILEG_JOB_EARTH_ELEMENTALIST;
+        case JOB_SKALD:
+            return TILEG_JOB_SKALD;
+        case JOB_VENOM_MAGE:
+            return TILEG_JOB_VENOM_MAGE;
+        case JOB_CHAOS_KNIGHT:
+            return TILEG_JOB_CHAOS_KNIGHT;
+        case JOB_TRANSMUTER:
+            return TILEG_JOB_TRANSMUTER;
+        case JOB_MONK:
+            return TILEG_JOB_MONK;
+        case JOB_WARPER:
+            return TILEG_JOB_WARPER;
+        case JOB_WANDERER:
+            return TILEG_JOB_WANDERER;
+        case JOB_ARTIFICER:
+            return TILEG_JOB_ARTIFICER;
+        case JOB_ARCANE_MARKSMAN:
+            return TILEG_JOB_ARCANE_MARKSMAN;
+        case JOB_ABYSSAL_KNIGHT:
+            return TILEG_JOB_ABYSSAL_KNIGHT;
+        default:
+            return TILEG_ERROR;
+    }
+}
+
+tileidx_t tileidx_player_species(const species_type species)
+{
+    switch (species)
+    {
+        case SP_HUMAN:
+            return TILEP_BASE_HUMAN;
+        case SP_DEEP_ELF:
+            return TILEP_BASE_DEEP_ELF;
+        case SP_HALFLING:
+            return TILEP_BASE_HALFLING;
+        case SP_HILL_ORC:
+            return TILEP_BASE_ORC;
+        case SP_KOBOLD:
+            return TILEP_BASE_KOBOLD;
+        case SP_MUMMY:
+            return TILEP_BASE_MUMMY;
+        case SP_NAGA:
+            return TILEP_BASE_NAGA;
+        case SP_OGRE:
+            return TILEP_BASE_OGRE;
+        case SP_TROLL:
+            return TILEP_BASE_TROLL;
+        case SP_BASE_DRACONIAN:
+            return TILEP_BASE_DRACONIAN;
+        case SP_CENTAUR:
+            return TILEP_BASE_CENTAUR;
+        case SP_DEMIGOD:
+            return TILEP_BASE_DEMIGOD;
+        case SP_SPRIGGAN:
+            return TILEP_BASE_SPRIGGAN;
+        case SP_MINOTAUR:
+            return TILEP_BASE_MINOTAUR;
+        case SP_DEMONSPAWN:
+            return TILEP_BASE_DEMONSPAWN;
+        case SP_GHOUL:
+            return TILEP_BASE_GHOUL;
+        case SP_TENGU:
+            return TILEP_BASE_TENGU + 2;
+        case SP_MERFOLK:
+            return TILEP_BASE_MERFOLK;
+        case SP_VAMPIRE:
+            return TILEP_BASE_VAMPIRE;
+        case SP_DEEP_DWARF:
+            return TILEP_BASE_DEEP_DWARF;
+        case SP_FELID:
+            return TILEP_BASE_FELID;
+        case SP_OCTOPODE:
+            return TILEP_BASE_OCTOPODE;
+        case SP_GARGOYLE:
+            return TILEP_BASE_GARGOYLE;
+        case SP_FORMICID:
+            return TILEP_BASE_FORMICID;
+        case SP_VINE_STALKER:
+            return TILEP_BASE_VINE_STALKER;
+        case SP_BARACHI:
+            return TILEP_BASE_BARACHI;
+        case SP_GNOLL:
+            return TILEP_BASE_GNOLL;
+        default:
+            return TILEP_ERROR;
+    }
+}
+
 tileidx_t tileidx_known_brand(const item_def &item)
 {
     if (!item_type_known(item))

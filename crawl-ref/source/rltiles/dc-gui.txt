@@ -167,3 +167,28 @@ prompt_no PROMPT_NO
 
 tutorial/movement.png TUT_MOVEMENT
 tutorial/combat.png TUT_COMBAT
+
+backgrounds/Fi.png JOB_FIGHTER
+backgrounds/Gl.png JOB_GLADIATOR
+backgrounds/Mo.png JOB_MONK
+backgrounds/Hu.png JOB_HUNTER
+backgrounds/As.png JOB_ASSASSIN
+backgrounds/Ar.png JOB_ARTIFICER
+backgrounds/Wn.png JOB_WANDERER
+backgrounds/Be.png JOB_BERSERKER
+backgrounds/AK.png JOB_ABYSSAL_KNIGHT
+backgrounds/CK.png JOB_CHAOS_KNIGHT
+backgrounds/Sk.png JOB_SKALD
+backgrounds/Tr.png JOB_TRANSMUTER
+backgrounds/AM.png JOB_ARCANE_MARKSMAN
+backgrounds/Wa.png JOB_WARPER
+backgrounds/En.png JOB_ENCHANTER
+backgrounds/Wz.png JOB_WIZARD
+backgrounds/Cj.png JOB_CONJURER
+backgrounds/Su.png JOB_SUMMONER
+backgrounds/Ne.png JOB_NECROMANCER
+backgrounds/FE.png JOB_FIRE_ELEMENTALIST
+backgrounds/IE.png JOB_ICE_ELEMENTALIST
+backgrounds/AE.png JOB_AIR_ELEMENTALIST
+backgrounds/EE.png JOB_EARTH_ELEMENTALIST
+backgrounds/VM.png JOB_VENOM_MAGE
