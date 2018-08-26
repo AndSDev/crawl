@@ -32,6 +32,7 @@
 #include "view.h"
 #include "xom.h"
 #include "ui.h"
+#include "tiledef-feat.h"
 
 #ifdef __ANDROID__
 #include <android/log.h>
@@ -422,9 +423,29 @@ NORETURN void end_game(scorefile_entry &se, int hiscore_index)
     tiles_crt_popup show_as_popup;
 #endif
 
+    auto title_hbox = make_shared<Box>(Widget::HORZ);
+#ifdef USE_TILE
+    tile_def death_tile(TILEG_ERROR, TEX_GUI);
+    if (death_type == KILLED_BY_LEAVING || death_type == KILLED_BY_WINNING)
+        death_tile = tile_def(TILE_DNGN_EXIT_DUNGEON, TEX_FEAT);
+    else
+        death_tile = tile_def(TILE_DNGN_GRAVESTONE+1, TEX_FEAT);
+
+    auto tile = make_shared<Image>(death_tile);
+    tile->set_margin_for_sdl({0, 10, 0, 0});
+    title_hbox->add_child(move(tile));
+#endif
+    string goodbye_title = make_stringf("Goodbye, %s.", you.your_name.c_str());
+    title_hbox->add_child(make_shared<Text>(goodbye_title));
+    title_hbox->align_items = Widget::CENTER;
+    title_hbox->set_margin_for_sdl({0, 0, 20, 0});
+    title_hbox->set_margin_for_crt({0, 0, 1, 0});
+
+    auto vbox = make_shared<Box>(Box::VERT);
+    vbox->add_child(move(title_hbox));
+
     string goodbye_msg;
-    goodbye_msg += make_stringf("Goodbye, %s.", you.your_name.c_str());
-    goodbye_msg += "\n\n    "; // Space padding where # would go in list format
+    goodbye_msg += "    "; // Space padding where # would go in list format
 
     string hiscore = hiscores_format_single_long(se, true);
 
@@ -445,8 +466,10 @@ NORETURN void end_game(scorefile_entry &se, int hiscore_index)
 #endif
 
     mouse_control mc(MOUSE_MODE_MORE);
-    auto prompt_ui = make_shared<Text>(formatted_string::parse_string(goodbye_msg));
-    auto popup = make_shared<ui::Popup>(prompt_ui);
+
+    auto goodbye_txt = make_shared<Text>(formatted_string::parse_string(goodbye_msg));
+    vbox->add_child(goodbye_txt);
+    auto popup = make_shared<ui::Popup>(move(vbox));
     bool done = false;
     popup->on(Widget::slots.event, [&](wm_event ev)  {
         return done = ev.type == WME_KEYDOWN;
